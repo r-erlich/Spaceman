@@ -1,0 +1,13 @@
+h1 {
+  color: gold;
+  text-align: center;
+  font-size: 60px;
+}
+
+body {
+  background: linear-gradient(black, midnightblue);
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
