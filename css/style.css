@@ -20,6 +20,10 @@ body {
 
 .textContainer {
   color: gold;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .keyboard {
@@ -56,4 +60,33 @@ body {
 
 .active {
   background-color: whitesmoke;
+}
+
+.reset {
+  color: gold;
+  background-color: darkblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+#start {
+  color: gold;
+  background-color: darkblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  font-size: 30px;
 }

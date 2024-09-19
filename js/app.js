@@ -101,7 +101,7 @@ function checkGameState() {
   } else if (!gameBoard.includes(" _ ")) {
     display.innerHTML = `
       <p>You did it!</p>
-      <button class="reset">Reset Game</button>
+      <button class="reset">Play Again</button>
     `;
 
     document.querySelector(".reset").addEventListener("click", () => {
