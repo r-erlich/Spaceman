@@ -30,6 +30,15 @@ const animals = [
   "caiman",
   "newt",
   "axolotl",
+  "quokka",
+  "squid",
+  "owl",
+  "falcon",
+  "quail",
+  "ox",
+  "shrimp",
+  "leopard",
+  "cheetah",
 ];
 
 const maxAttempts = 8;
