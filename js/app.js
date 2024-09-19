@@ -1,4 +1,7 @@
 const display = document.querySelector(".textContainer");
+const keys = document.querySelectorAll(".key");
+const startBtn = document.querySelector("#start");
+const headingElement = document.querySelector("h1");
 
 const animals = [
   "dog",
@@ -12,22 +15,48 @@ const animals = [
   "mouse",
   "rat",
   "snake",
+  "gorilla",
+  "monkey",
+  "moose",
+  "deer",
+  "insect",
+  "spider",
+  "bear",
+  "shark",
+  "coral",
+  "gazelle",
+  "crocodile",
+  "alligator",
+  "caiman",
+  "newt",
+  "axolotl",
 ];
 
 const maxAttempts = 8;
-let word = animals[Math.floor(Math.random() * animals.length)];
-console.log(word);
-let guessedLetters = [];
-let gameBoard = [];
-let attempts = 0;
-let keys = document.querySelectorAll(".key");
+let word;
+let guessedLetters;
+let gameBoard;
+let attempts;
+let wordAttemp;
 
-// Set up game board
-for (let i = 0; i < word.length; i++) {
-  gameBoard.push(" _ ");
+function startGame() {
+  word = animals[Math.floor(Math.random() * animals.length)];
+  guessedLetters = [];
+  gameBoard = [];
+  attempts = 0;
+  wordAttemp = "";
+  // Set up game board
+  for (let i = 0; i < word.length; i++) {
+    gameBoard.push(" _ ");
+  }
+
+  display.innerText = gameBoard.join("");
 }
 
-display.innerText = gameBoard.join("");
+startBtn.addEventListener("click", () => {
+  startGame();
+  headingElement.innerText = "";
+});
 
 let handleClick = (event) => {
   console.log(event.target.textContent);
@@ -45,6 +74,10 @@ let handleClick = (event) => {
   } else {
     // guess is wrong
     // increase attempt count
+    let spaceMan = "SPACEMAN";
+    wordAttemp += spaceMan[attempts];
+    headingElement.innerText = wordAttemp;
+
     attempts++;
   }
 
@@ -57,8 +90,22 @@ for (let i = 0; i < keys.length; i++) {
 
 function checkGameState() {
   if (attempts >= maxAttempts) {
-    display.innerText = "you lose";
+    display.innerHTML = `
+      <p>I am so sorry, but you have lost. The SPACEMAN is complete</p>
+      <button class="reset">Reset Game</button>
+    `;
+
+    document.querySelector(".reset").addEventListener("click", () => {
+      startGame();
+    });
   } else if (!gameBoard.includes(" _ ")) {
-    display.innerText = "you win";
+    display.innerHTML = `
+      <p>You did it!</p>
+      <button class="reset">Reset Game</button>
+    `;
+
+    document.querySelector(".reset").addEventListener("click", () => {
+      startGame();
+    });
   }
 }
