@@ -18,3 +18,7 @@ Here are some stretch goals I have as I continue to improve my game
 - have outlines for SPACEMAN to improve visibility of progress towards loss
 - create more detailed space theming for background
 - hide letters from keyboard upon use to help track progress of used letters
+
+  ## Link to the game
+
+  https://r-erlich.github.io/Spaceman/
